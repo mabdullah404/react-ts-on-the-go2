@@ -5,9 +5,10 @@ import './Country.css'
 export interface CountryProps {
     country: CountryType ;
     handleVisitedCountry: (country:CountryType) => void 
+    handleVisitedFlag: (flag:string) => void 
 }
 
-export default function Country({ country ,handleVisitedCountry}: CountryProps) {
+export default function Country({ country ,handleVisitedCountry,handleVisitedFlag}: CountryProps) {
 
     const [visited,setVisited] = useState<boolean>(false)
 
@@ -35,6 +36,12 @@ export default function Country({ country ,handleVisitedCountry}: CountryProps) 
             <p>population :  {country.population.population}</p>
             <button onClick={handleVisited}>
                 {visited ? "Visited " : "Mark as visited " }
+            </button>
+            <br />
+            <br />
+
+            <button onClick={() => handleVisitedFlag(country.flags.flags.png)}>
+                Add Flag Visited
             </button>
            
         </div>
