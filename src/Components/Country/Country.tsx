@@ -27,7 +27,7 @@ export default function Country({ country ,handleVisitedCountry,handleVisitedFla
     return (
         <div className={`country  ${visited? 'country-visited'  : ''}`}>
 
-            <button onClick={()=> setVisited(false)}>Reset</button>
+            {/* <button onClick={()=> setVisited(false)}>Reset</button> */}
 
             <h3>{country.name.common}</h3>
 
