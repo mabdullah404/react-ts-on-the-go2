@@ -10,10 +10,15 @@ export interface CountriesProps {
 export default function Countries({ countriesPromise }: CountriesProps) {
     const countries = use(countriesPromise) ;
     // console.log(countries)
+
+   
+
     return (
         <div >
 
             <h2>Countries : {countries.length} </h2>
+
+            <button >Reset All</button>
 
             <div className="countries">
                 {

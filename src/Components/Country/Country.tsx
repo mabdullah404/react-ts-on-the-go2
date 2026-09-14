@@ -21,8 +21,13 @@ export default function Country({ country }: CountryProps) {
     }
     
     return (
+        
         <div className={`country  ${visited? 'country-visited'  : ''}`}>
+
+            <button onClick={()=> setVisited(false)}>Reset</button>
+
             <h3>{country.name.common}</h3>
+
             <p>{country.capital.capital}</p>
             <img src={country.flags.flags.png} alt={country.flags.flags.alt} />
             <p>population :  {country.population.population}</p>
