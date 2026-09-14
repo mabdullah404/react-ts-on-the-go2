@@ -4,14 +4,17 @@ import './Country.css'
 
 export interface CountryProps {
     country: CountryType ;
+    handleVisitedCountry: (country:CountryType) => void 
 }
 
-export default function Country({ country }: CountryProps) {
+export default function Country({ country ,handleVisitedCountry}: CountryProps) {
 
     const [visited,setVisited] = useState<boolean>(false)
 
-    const handleVisited=() =>{
+    const handleVisited =() =>{
         setVisited(!visited)
+
+        handleVisitedCountry(country);
         // if(visited){
         //     setVisited(false)
         // }else{
@@ -21,7 +24,6 @@ export default function Country({ country }: CountryProps) {
     }
     
     return (
-        
         <div className={`country  ${visited? 'country-visited'  : ''}`}>
 
             <button onClick={()=> setVisited(false)}>Reset</button>
